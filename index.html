@@ -3,20 +3,92 @@
 
 <head>
 	<title>What's My Grade?</title>
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans|Actor' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript" src="jquery-2.0.3.js"></script>
+	<script type="text/javascript" src="calculateGrade.js"></script>
 </head>
 
 <body>
-	<h1>What's My Grade?</h1>
-	<h2>Enter in your numeric grade on an assignment to see what letter grade it is</h2>
+	<style>
+		h1 {
+			font-family: 'Open Sans';
+			font-size: 3.5em;
+			text-align: center;
+			color: #0078e7;
+		}
+		h2 {
+			font-family: 'Actor';
+			font-size: 2em;
+			text-align: center;
+		}
+		h3 {
+			font-family: 'Actor';
+			font-size: 1em;
+			text-align: center;
+		}
+		form {
+			text-align: center;
+		}
+		label {
+			font-family: 'Actor';
+			font-size: 2em;
+		}
+		input[type=number] {
+			font-size: 1.5em;
+			display: inline-block;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+		}
+		button {
+			/*Button*/
+			background-color: #0078e7;
+			border-color: transparent;
+			/*Text*/
+			font-family: 'Actor';
+			font-size: 1.25em;
+			color: white;
+			text-align: center;
+			padding-top: 0.25em;
+			padding-bottom: 0.25em;
+			padding-left: 0.25em;
+			padding-right: 0.25em;
+		}
+		#numerator {
+			width: 150px;
+		}
+		#denominator {
+			width: 138px;
+		}
+	</style>
+
+	<div class="intro">
+		<h1>What's My Grade?</h1>
+		<h2>Enter in your numeric grade on an assignment to see what letter grade it is</h2>
+	</div>
+
 	<br/>
+
+	<form id="grades">	
+		<label>Points you received:</label>
+		<input type="number" id="numerator" step="any" min="0">
+		<br/>
+		<label>Total possible points:</label> 
+		<input type="number" id="denominator" step="any" min="0">
+		<br/>
+		<button>Find my grade!</button>
+	</form>
+
+	<br/>
+
+	<div class="results">
+	</div>
+
+	<div class="footer">
+		<h3>Graded to Weston Public Schools' grading scale. Made by <a href="https://github.com/alishau">Alisha Ukani</a>.</h3>
+	</div>
 	
-	<h3>Points you received:</h3>
-	<input type="number" id="numerator" size="20">
-	<br/>
-	<h3>Total points:</h3>
-	<input type="number" id="denominator" size="20">
-	<br/>
-	<input type="submit" value="Find my grade!">
 </body>
 
 </html>
